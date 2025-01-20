@@ -85,4 +85,10 @@ public class EmployeeController {
         return Result.success(pageResult);
     }
 
+    @PostMapping("/status/{status}")
+    public Result startOrStpp(@PathVariable Integer status, long id){
+        employeeService.startOrStpp(status, id);
+        return Result.success();
+    }
+
 }
